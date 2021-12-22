@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700;800;900&display=swap");
+
+:root {
+  --top-bg: hsl(225, 100%, 98%);
+  --bg: hsl(0, 0%, 100%);
+  --cards-bg: hsl(225, 100%, 98%);
+  --text-color1: hsl(230, 17%, 14%);
+  --text-color2: black;
+}
+html {
+  font-family: "Inter", sans-serif;
+}
+.heading h1 {
+  display: inline;
+}
+body {
+  margin: 0px;
+}
+.dark {
+  width: 100%;
+  position: relative;
+}
+.dark > input[type="checkbox"] {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+main {
+  padding: 0px 0px 40px 0px;
+  background-color: var(--bg);
+}
+.top-bar {
+  background-color: var(--top-bg);
+  border-radius: 0px 0px 30px 30px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  margin-bottom: -80px;
+}
+.top-bar section {
+  padding: 10px 0px 10px 0px;
+}
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .dark > input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+.switch {
+  width: 38px;
+  border-radius: 11px;
+  position: relative;
+  top: 5px;
+  height: 20px;
+  background-color: hsl(230, 22%, 74%);
+}
+.switch::after {
+  content: " ";
+  position: absolute;
+  left: 4px;
+  top: 3px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: white;
+  transform: translateX(100%);
+  transition: all 0.3s ease-in-out;
+}
+.switch:checked:after {
+  transform: translateX(0%);
+  background-color: black;
+}
+.switch:checked {
+  background-image: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+.media,
+.overview,
+main > p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin: 40px 0px 0px 0px;
+}
+.media section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  background-color: var(--cards-bg);
+  border-radius: 5px;
+  padding: 20px 0px 0px 0px;
+}
+.media section:nth-child(1) {
+  border-top: 3px solid hsl(208, 92%, 53%);
+}
+.media section:nth-child(2) {
+  border-top: 3px solid hsl(203, 89%, 53%);
+}
+.media section:nth-child(3) {
+  border-top: 3px solid hsl(9, 86%, 53%);
+}
+.media section:nth-child(4) {
+  border-top: 3px solid hsl(348, 97%, 39%);
+}
+.media section p big {
+  font-size: 300%;
+  font-weight: 700;
+}
+.media .followers {
+  color: var(--text-color1);
+  text-align: center;
+  margin-top: -20px;
+  font-size: 80%;
+  letter-spacing: 5px;
+}
+.top-bar .followers {
+  color: var(--text-color1);
+}
+.increase {
+  font-weight: 700;
+  color: hsl(163, 72%, 41%);
+  margin-left: 5px;
+}
+.decrease {
+  font-weight: 700;
+  color: hsl(356, 69%, 56%);
+}
+
+main > p {
+  box-sizing: border-box;
+  font-size: 200%;
+  font-weight: 700;
+  width: 80%;
+  margin-top: 70px;
+}
+.overview section {
+  width: 80%;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: var(--cards-bg);
+}
+.overview section p {
+  position: relative;
+}
+.overview section .icon,
+.overview section p:nth-child(2) span {
+  position: absolute;
+  right: 0%;
+}
+.overview section p:nth-child(2) span {
+  bottom: 5px;
+}
+.overview section .icon {
+  bottom: 0px;
+}
+.overview section p:nth-child(2) {
+  margin: 30px 0px 0px 0px;
+}
+.overview section p big {
+  font-size: 200%;
+  font-weight: 700;
+}
+.overview section p:nth-child(2) span img {
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+}
+/* color adjustment */
+.heading h1,
+.media p big,
+.overview p big,
+main > p {
+  color: var(--text-color2);
+}
+.top-bar .followers,
+.overview section p span,
+.media section span:nth-child(1),
+.overview section p span:nth-child(1),
+.dark span,
+hr {
+  color: var(--text-color1);
+}
+@media screen and (min-width: 800px) {
+  .media,
+  .overview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .media {
+    position: relative;
+    z-index: 2;
+  }
+  .top-bar {
+    display: flex;
+    position: relative;
+  }
+  hr {
+    display: none;
+  }
+  .dark > input[type="checkbox"] {
+    position: absolute;
+    right: unset;
+    bottom: unset;
+  }
+  main {
+    padding: 0px 10% 40px 10%;
+  }
+  .dark {
+    position: absolute;
+    width: auto;
+    right: 5%;
+  }
+  .dark .switch {
+    margin-top: 2px;
+  }
+  .top-bar {
+    border-radius: 0px 0px 30px 30px;
+    box-sizing: border-box;
+    height: 200px;
+    padding: 20px;
+    margin-bottom: -100px;
+  }
+  main > p {
+    align-items: unset;
+    justify-content: unset;
+  }
+}
