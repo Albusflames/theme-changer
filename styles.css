@@ -102,7 +102,15 @@ main > p {
   border-top: 3px solid hsl(203, 89%, 53%);
 }
 .media section:nth-child(3) {
-  border-top: 3px solid hsl(9, 86%, 53%);
+  /* border-top: 3px solid hsl(9, 86%, 53%); */
+  padding-top: 3px;
+  box-sizing: border-box;
+  border: 0px;
+  background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+.media section:nth-child(3) section {
+  border: 0px;
+  width: 100%;
 }
 .media section:nth-child(4) {
   border-top: 3px solid hsl(348, 97%, 39%);
